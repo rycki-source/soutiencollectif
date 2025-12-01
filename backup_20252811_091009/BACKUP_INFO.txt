@@ -1,0 +1,42 @@
+=================================================
+SAUVEGARDE SOUTIEN COLLECTIF
+=================================================
+
+Date de sauvegarde: 28/11/2025  9:10:10,71
+Systeme: THEFUCKINBEAST - Windows_NT
+
+CONTENU DE LA SAUVEGARDE:
+- Code source complet (backend, frontend, admin)
+- Base de donnees PostgreSQL (soutien_collectif)
+- Fichiers de configuration (.env, package.json)
+- Documentation et guides de deploiement
+- Scripts de demarrage/arret
+
+STRUCTURE DU PROJET:
+- backend/          (API Node.js + Express + PostgreSQL)
+- frontend/         (Interface React + Vite)
+- admin/           (Interface admin HTML/JS)
+- docs/            (Documentation)
+- package.json     (Scripts globaux)
+
+INFORMATIONS BASE DE DONNEES:
+- Base: soutien_collectif
+- Utilisateur: postgres
+- Tables: Users, Campaigns, Donations
+
+PORTS UTILISES:
+- Backend API: 5000
+- Interface Admin: 3001
+- Frontend React: 5173
+
+IDENTIFIANTS ADMIN:
+- Email: admin@soutiencollectif.org
+- Password: AdminSecure123
+
+COMMANDES DE RESTAURATION:
+1. Copier le dossier soutientCollectif
+2. Installer les dependances: npm run install:all
+3. Restaurer la DB: psql -U postgres -d soutien_collectif < database_backup.sql
+4. Demarrer: npm run dev ou start-servers.bat
+
+=================================================
