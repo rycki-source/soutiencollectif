@@ -45,7 +45,6 @@ router.get('/campaign/:campaignId', async (req, res) => {
         campaignId: req.params.campaignId,
         paymentStatus: 'completed'
       },
-      attributes: { exclude: ['stripePaymentIntentId', 'stripeSessionId'] },
       order: [['createdAt', 'DESC']],
       limit: 50
     });

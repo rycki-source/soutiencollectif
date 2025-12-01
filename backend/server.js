@@ -9,7 +9,6 @@ import authRoutes from './routes/auth.js';
 import campaignRoutes from './routes/campaigns.js';
 import donationRoutes from './routes/donations.js';
 import userRoutes from './routes/users.js';
-import stripeRoutes from './routes/stripe.js';
 
 // Load environment variables
 dotenv.config();
@@ -29,9 +28,6 @@ app.use(cors({
   origin: allowedOrigins,
   credentials: true
 }));
-
-// For Stripe webhooks - must be before express.json()
-app.use('/api/stripe/webhook', express.raw({ type: 'application/json' }));
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -60,7 +56,6 @@ app.use('/api/auth', authRoutes);
 app.use('/api/campaigns', campaignRoutes);
 app.use('/api/donations', donationRoutes);
 app.use('/api/users', userRoutes);
-app.use('/api/stripe', stripeRoutes);
 
 // Health check
 app.get('/api/health', (req, res) => {

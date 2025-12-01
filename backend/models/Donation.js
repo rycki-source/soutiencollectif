@@ -42,18 +42,12 @@ const Donation = sequelize.define('Donation', {
     defaultValue: false
   },
   paymentMethod: {
-    type: DataTypes.ENUM('stripe', 'paypal', 'card', 'other'),
-    defaultValue: 'stripe'
+    type: DataTypes.ENUM('card', 'bank_transfer', 'cash', 'other'),
+    defaultValue: 'card'
   },
   paymentStatus: {
     type: DataTypes.ENUM('pending', 'completed', 'failed', 'refunded'),
-    defaultValue: 'pending'
-  },
-  stripePaymentIntentId: {
-    type: DataTypes.STRING
-  },
-  stripeSessionId: {
-    type: DataTypes.STRING
+    defaultValue: 'completed'
   },
   receiptUrl: {
     type: DataTypes.STRING

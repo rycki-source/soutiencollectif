@@ -64,10 +64,4 @@ export const usersAPI = {
   getAll: () => api.get('/users')
 };
 
-// ============= STRIPE =============
-export const stripeAPI = {
-  createPaymentIntent: (data) => api.post('/stripe/create-payment-intent', data),
-  getConfig: () => api.get('/stripe/config')
-};
-
 export default api;
