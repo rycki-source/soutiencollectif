@@ -1,0 +1,35 @@
+{
+  "name": "Soutien Collectif API",
+  "description": "Backend API pour la plateforme de crowdfunding Soutien Collectif",
+  "repository": "https://github.com/rycki-source/soutiencollectif",
+  "keywords": ["nodejs", "express", "postgresql", "crowdfunding"],
+  "buildpacks": [
+    {
+      "url": "heroku/nodejs"
+    }
+  ],
+  "addons": [
+    {
+      "plan": "heroku-postgresql:essential-0"
+    }
+  ],
+  "env": {
+    "NODE_ENV": {
+      "description": "Node environment",
+      "value": "production"
+    },
+    "JWT_SECRET": {
+      "description": "Secret key for JWT tokens",
+      "generator": "secret"
+    },
+    "STRIPE_SECRET_KEY": {
+      "description": "Stripe secret key for payment processing"
+    },
+    "FRONTEND_URL": {
+      "description": "URL of the frontend application"
+    },
+    "ADMIN_URL": {
+      "description": "URL of the admin interface"
+    }
+  }
+}
